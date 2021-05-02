@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+    <script src="./index.min.js"></script>
+    <style>
+
+        * {
+            user-select: none;
+        }
+        html {
+            font-size: 72px;
+            height: 100%;
+        }
+        body {
+            position: relative;
+            max-width: 720px;
+            min-width: 320px;
+            height: 100%;
+        }
+        div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        h4 {
+            position: absolute;
+            display: block;
+            font-size: 0.7rem;
+            top: 2rem;
+            left: 1rem;
+            color: #ffebee
+        }
+        .like {
+            top: 3rem;
+            left: 2rem;
+        }
+        .bottom {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <audio src="video/11000游戏常用音效-水滴3_爱给网_aigei_com.mp3"  id='audio' ></audio>
+    <audio src="video/Kryust - Moon and You.mp3" id="bgm" ></audio>
+    <audio src="video/DAOKO,米津玄師 - 打上花火.mp3" id="fireworks"></audio>
+    <div class="bottom">
+        <img src="images/手机壁纸2000PXA卷 (861).jpg" alt="" class="sueface">
+        <h4 class="like">我喜欢你</h4>
+    </div>
+    <div class="last">
+        <img src="images/手机壁纸2000PXA卷 (768).jpg" alt="" class="sueface">
+        <h4>因为</h4>
+    </div>
+    <div class="next">
+        <img src="images/手机壁纸2000PXA卷 (905).jpg" alt="">
+        <h4>从此我发誓<br>
+        不管你在世界的哪个地方<br>
+        我一定会<br>
+        去见你
+        </h4>
+    </div>
+    <div class="next first">
+        <img src="images/手机壁纸2000PXA卷 (99).jpg" alt="">
+        <h4>初见<br>
+        已是倾心 </h4>
+    </div>
+    <script>
+        $(function(){
+            $('.first').click(function(){
+            var bgm = document.getElementById('bgm');
+            bgm.currentTime = 2;
+            bgm.play();
+        })
+            $('.next').click(function(){
+                $(this).fadeOut(1000); 
+                
+            })
+            $('.last').click(function(){
+                $(this).fadeOut(3000,function () {
+            
+                    const fireworks = document.getElementById('fireworks');
+                    fireworks.currentTime = 60;
+                    fireworks.play();
+                    $('.bottom').fadeIn(500);
+                
+                } );
+                var bgm = document.getElementById('bgm');
+                bgm.pause();
+                var myauto = document.getElementById('audio');
+                myauto.play();
+                
+                
+            })
+        })
+    </script>
+</body>
+</html>
